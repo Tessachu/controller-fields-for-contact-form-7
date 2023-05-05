@@ -440,7 +440,13 @@ function au_cf7_cf_tag_generator_input($prefix, $name, $label, $atts = array(), 
                 esc_attr($atts['id']),
                 esc_html($label)
             );
-            echo ($input_html);
+            $allowed_properties = au_cf7_get_allowed_input_properties();
+            echo (wp_kses($input_html, array_merge(array(
+                'label' => array('for' => array()),
+                'input' => $allowed_properties,
+                'select' => $allowed_properties,
+                'textarea' => $allowed_properties
+            ), au_cf7_get_allowed_option_properties())));
             if ($description) {
                 printf('<br /><small>%s</small>', wp_kses($description, array(
                     'strong' => array(),

@@ -27,6 +27,7 @@ if (!function_exists('au_cf7_get_allowed_input_properties')) {
             'step' => array(),
             'disabled' => array(),
             'readonly' => array(),
+            'checked' => array(),
             'size' => array(),
             'maxlength' => array(),
             'multiple' => array(),
@@ -250,7 +251,7 @@ function au_cf7_cf_checkbox_html($atts, $label, $label_ui = true, $reverse = fal
         }
         if ($echo) {
             echo (wp_kses($html, array(
-                'input' => au_cf7_get_allowed_input_properties(array('checked')),
+                'input' => au_cf7_get_allowed_input_properties(),
                 'label' => array(),
                 'span' => array('class' => array())
             )));

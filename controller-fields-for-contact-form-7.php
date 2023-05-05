@@ -9,7 +9,7 @@
  * Plugin Name: Controller Fields for Contact Form 7
  * Plugin URI: https://aurisecreative.com/controller-fields-for-contact-form-7
  * Description: This plugin extends Contact Form 7 by adding controller form fields and a framework to hide/display any form content based on user interaction. Requires Contact Form 7.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: AuRise Creative
  * Author URI: https://aurisecreative.com/
  * License: GPLv3 or later
@@ -34,7 +34,7 @@
 defined('ABSPATH') || exit; // Exit if accessed directly
 
 // Define current version
-define('CF7_CONTROLLERFIELDS_VERSION', '1.0.1');
+define('CF7_CONTROLLERFIELDS_VERSION', '1.0.2');
 
 // Define root directory
 defined('CF7_CONTROLLERFIELDS_DIR') || define('CF7_CONTROLLERFIELDS_DIR', __DIR__);
@@ -284,5 +284,3 @@ if (is_admin()) {
      */
     include_once(CF7_CONTROLLERFIELDS_DIR . '/includes/admin.php');
 }
-
-

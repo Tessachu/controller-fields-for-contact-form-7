@@ -4,7 +4,7 @@ Donate link: https://just1voice.com/donate/
 Tags: Contact Form 7, contact, contact form, dynamic, text, input, controllable, display, hide, show, form field
 Requires at least: 4.6
 Tested up to: 6.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -131,9 +131,15 @@ Please check out the [FAQ on our website](https://aurisecreative.com/docs/contro
 
 == Upgrade Notice ==
 
-* 1.0.1 New plugin!
+* 1.0.2 New plugin!
 
 == Changelog ==
+
+= 1.0.2 =
+
+**Submission Date: May 5, 2023**
+
+* Fix: modifications from plugin review
 
 = 1.0.1 =
 

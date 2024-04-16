@@ -1,0 +1,17 @@
+# Ignore system files
+.DS_Store
+package-lock.json
+*.zip
+
+# Ignore the Build Directories
+node_modules
+_build
+_build_assets
+_svn
+*.min.js
+*.min.css
+
+# How to Ignore a Previously Committed Files
+# Example, you accidentally added an `.env` file and want to remove it.
+# 1. Update .gitignore file to include the file: `.env`
+# 2. Run `git rm --cached .env` in the terminal to remove it from the repo and index, but not your local system

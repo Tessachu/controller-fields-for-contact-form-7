@@ -18,6 +18,10 @@ Contact Form 7 is an excellent WordPress plugin and one of the top choices of fr
 
 The possibilities are endless!
 
+= View Demo =
+
+[Preview this plugin](https://wordpress.org/plugins/TEXTDOMAIN_PLACEHOLDER/?preview=1) in the WordPress Playground, a sandbox environment where you can explore the features of this plugin, both in the WordPress backend as an admin user and on the frontend.
+
 = WHAT DOES IT DO? =
 
 This plugin creates three (3) new form tags for controlling the appearance of other form tags (aka "controller") and a special form tag generator button to output the HTML needed to wrap the controllable form tags inside.
@@ -137,7 +141,7 @@ Please check out the [FAQ on our website](https://aurisecreative.com/docs/TEXTDO
 == Upgrade Notice ==
 
 = VERSION_PLACEHOLDER =
-Major updates to script function to allow for more flexibiity, including operations, multiple controllers, and numeric value checks. Tag generator updates coming soon! See [the changelog](https://plugins.trac.wordpress.org/browser/TEXTDOMAIN_PLACEHOLDER/trunk/changelog.txt) for more details.
+Major updates to script function to allow for more flexibiity, including operations, multiple controllers, numeric value checks, and a bug fix! Tag generator updates coming soon! See [the changelog](https://plugins.trac.wordpress.org/browser/TEXTDOMAIN_PLACEHOLDER/trunk/changelog.txt) for more details.
 
 == Changelog ==
 

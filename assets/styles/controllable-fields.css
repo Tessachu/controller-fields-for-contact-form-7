@@ -1,3 +1,3 @@
 .au-cf7-hidden-by-controller {
-    display: none;
+    display: none !important;
 }

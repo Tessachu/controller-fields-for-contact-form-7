@@ -1,21 +1,22 @@
 <?php
 
 /**
- * Controller Fields for Contact Form 7 Plugin
- *
- * @copyright Copyright (c) 2023, AuRise Creative - support@aurisecreative.com
- * @license   http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License, version 3 or higher
- *
  * Plugin Name: Controller Fields for Contact Form 7
- * Plugin URI: https://aurisecreative.com/controller-fields-for-contact-form-7
  * Description: This plugin extends Contact Form 7 by adding controller form fields and a framework to hide/display any form content based on user interaction. Requires Contact Form 7.
- * Version: 1.0.2
+ * Version: VERSION_PLACEHOLDER
  * Author: AuRise Creative
  * Author URI: https://aurisecreative.com/
- * License: GPLv3 or later
- * Requires at least: 4.6
- * Requires PHP: 5.4
- * Text Domain: controller-fields-for-contact-form-7
+ * Plugin URI: https://aurisecreative.com/TEXTDOMAIN_PLACEHOLDER/
+ * License: GPL v3
+ * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ * Requires at least: 5.5
+ * Requires PHP: 7.4
+ * Text Domain: TEXTDOMAIN_PLACEHOLDER
+ * Requires Plugins: contact-form-7
+ *
+ * @package AuRise\Plugin\PluginNamespace
+ * @copyright Copyright (c) 2024 Tessa Watkins, AuRise Creative <https://aurisecreative.com>
+ * @license http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License, version 3 or higher
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,7 +35,7 @@
 defined('ABSPATH') || exit; // Exit if accessed directly
 
 // Define current version
-define('CF7_CONTROLLERFIELDS_VERSION', '1.0.2');
+define('CF7_CONTROLLERFIELDS_VERSION', 'VERSION_PLACEHOLDER');
 
 // Define root directory
 defined('CF7_CONTROLLERFIELDS_DIR') || define('CF7_CONTROLLERFIELDS_DIR', __DIR__);
@@ -109,8 +110,8 @@ function au_cf7_cf_controller_shortcode_handler($tag)
         'tabindex' => $tag->get_option('tabindex', 'int', true),
         'aria-invalid' => $validation_error ? 'true' : 'false',
         'aria-expanded' => 'false',
-        'title' => __('Click to expand', 'controller-fields-for-contact-form-7'),
-        'data-collapse' => __('Click to collapse', 'controller-fields-for-contact-form-7')
+        'title' => __('Click to expand', 'TEXTDOMAIN_PLACEHOLDER'),
+        'data-collapse' => __('Click to collapse', 'TEXTDOMAIN_PLACEHOLDER')
     );
     // Every controller needs a unique ID for JS to work
     if (empty($atts['id'])) {
@@ -251,23 +252,24 @@ function au_cf7_cf_enqueue_assets()
     $cf_handle = 'controller-fields-for-contact-form-7';
     // Only load our assets where CF7 assets are loaded
     if ((wp_script_is($cf7_handle, 'registered') || wp_script_is($cf7_handle, 'enqueued') || wp_script_is($cf7_handle, 'queue') || wp_script_is($cf7_handle, 'done') || wp_script_is($cf7_handle, 'to_do')) && !wp_script_is($cf_handle, 'queue')) {
+        $minify = defined('SCRIPT_DEBUG') && constant('SCRIPT_DEBUG') ? '' : 'min';
         $url = plugin_dir_url(CF7_CONTROLLERFIELDS_FILE);
         $path = plugin_dir_path(CF7_CONTROLLERFIELDS_FILE);
 
         wp_enqueue_style(
             $cf_handle, //Handle
-            $url . 'assets/styles/controllable-fields.css', //Source
+            $url . "assets/styles/controllable-fields{$minify}.css", //Source
             array(), //Dependencies
-            WP_DEBUG ? @filemtime($path . 'assets/styles/tag-generator.css') : CF7_CONTROLLERFIELDS_VERSION //Version
+            $minify ? CF7_CONTROLLERFIELDS_VERSION : @filemtime($path . "assets/styles/controllable-fields{$minify}.css") //Version
         );
 
         //Plugin Scripts
         wp_enqueue_script(
             $cf_handle, //Handle
-            $url . 'assets/scripts/controllable-fields.js', //Source
+            $url . "assets/scripts/controllable-fields{$minify}.js", //Source
             array('jquery-core', $cf7_handle), //Dependencies
-            WP_DEBUG ? @filemtime($path . 'assets/scripts/tag-generator.js') : CF7_CONTROLLERFIELDS_VERSION, //Version
-            true //In footer
+            $minify ? CF7_CONTROLLERFIELDS_VERSION : @filemtime($path . "assets/scripts/controllable-fields{$minify}.js"), //Version
+            array('in_footer' => true, 'strategy' => 'defer') // Defer load in footer
         );
     }
 }

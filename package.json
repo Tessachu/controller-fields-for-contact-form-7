@@ -1,0 +1,14 @@
+{
+    "name": "controller-fields-for-contact-form-7",
+    "version": "1.1.0",
+    "devDependencies": {
+        "grunt": "^1.6.1",
+        "grunt-contrib-clean": "^2.0.1",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-cssmin": "^5.0.0",
+        "grunt-contrib-sass": "*",
+        "grunt-contrib-uglify": "^5.2.2",
+        "grunt-text-replace": "^0.4.0",
+        "grunt-wp-deploy": "^2.1.2"
+    }
+}

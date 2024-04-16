@@ -23,7 +23,7 @@ function au_cf7_cf_enqueue_admin_assets($hook)
             $prefix . 'admin', //Handle
             $url . 'assets/styles/tag-generator.css', //Source
             array('contact-form-7-admin'), //Dependencies
-            defined('WP_DEBUG') && constant('WP_DEBUG') ? @filemtime($path . 'assets/styles/tag-generator.css') : CF7_CONTROLLERFIELDS_VERSION //Version
+            @filemtime($path . 'assets/styles/tag-generator.css') //Version
         );
 
         //Plugin Scripts
@@ -31,8 +31,8 @@ function au_cf7_cf_enqueue_admin_assets($hook)
             $prefix . 'taggenerator', //Handle
             $url . 'assets/scripts/tag-generator.js', //Source
             array('jquery', 'wpcf7-admin-taggenerator'), //Dependencies
-            defined('WP_DEBUG') && constant('WP_DEBUG') ? @filemtime($path . 'assets/scripts/tag-generator.js') : CF7_CONTROLLERFIELDS_VERSION, //Version
-            true //In footer
+            @filemtime($path . 'assets/scripts/tag-generator.js'), //Version
+            array('in_footer' => true, 'strategy' => 'defer')
         );
     }
 }

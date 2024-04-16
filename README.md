@@ -1,4 +1,4 @@
-Controller Fields for Contact Form
+Controller Fields for Contact Form 7
 =======================================
 
 Contact Form 7 is an excellent WordPress plugin and one of the top choices of free WordPress plugins for contact forms. Controller Fields makes it even more awesome by adding dynamic content capabilities. This plugin provides new form tags for select fields, checkboxes, and radio buttons so you can use them to control the display of other fields and content. Some examples might include:

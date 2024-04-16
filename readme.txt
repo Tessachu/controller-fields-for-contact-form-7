@@ -1,4 +1,4 @@
-=== Controller Fields for Contact Form 7 ===
+=== PRODUCT_NAME ===
 Contributors: tessawatkinsllc
 Donate link: https://just1voice.com/donate/
 Tags: Contact Form 7, conditional, controllable, dynamic form, form field
@@ -75,6 +75,14 @@ Simply check this box if you do not want to submit this field in the form. It wi
 
 == Installation ==
 
+= Minimum Requirements =
+
+To ensure your WordPress installation meets these requirements, you can login to your WordPress website and navigate to *Tools > Site Health* and click on the *Info* tab. Expand the *WordPress*, *Active Plugins*, and *Server* accordions and compare that information with the details below.
+
+* WordPress version 5.5 or greater
+* PHP version 7.4 or greater
+* [Contact Form 7](https://wordpress.org/plugins/contact-form-7/) version 5.7 or greater
+
 There are three (3) ways to install my plugin: automatically, upload, or manually.
 
 = Install Method 1: Automatic Installation =
@@ -92,7 +100,7 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 This method involves is a little more involved. You don’t need to leave your web browser, but you’ll need to download and then upload the files yourself.
 
-1. [Download my plugin](https://wordpress.org/plugins/controller-fields-for-contact-form-7/) from WordPress.org; it will be in the form of a zip file.
+1. [Download my plugin](https://wordpress.org/plugins/TEXTDOMAIN_PLACEHOLDER/) from WordPress.org; it will be in the form of a zip file.
 1. Log in to your WordPress dashboard.
 1. Navigate to **Plugins > Add New**.
 1. Click the **Upload Plugin** button at the top of the screen.
@@ -104,8 +112,8 @@ This method involves is a little more involved. You don’t need to leave your w
 
 This method is the most involved as it requires you to be familiar with the process of transferring files using an SFTP client.
 
-1. [Download my plugin](https://wordpress.org/plugins/controller-fields-for-contact-form-7/) from WordPress.org; it will be in the form of a zip file.
-1. Unzip the contents; you should have a single folder named `controller-fields-for-contact-form-7`.
+1. [Download my plugin](https://wordpress.org/plugins/TEXTDOMAIN_PLACEHOLDER/) from WordPress.org; it will be in the form of a zip file.
+1. Unzip the contents; you should have a single folder named `TEXTDOMAIN_PLACEHOLDER`.
 1. Connect to your WordPress server with your favorite SFTP client.
 1. Copy the folder from step 2 to the `/wp-content/plugins/` folder in your WordPress directory. Once the folder and all of its files are there, installation is complete.
 1. Now log in to your WordPress dashboard.
@@ -124,13 +132,30 @@ This method is the most involved as it requires you to be familiar with the proc
 
 == Frequently Asked Questions ==
 
-Please check out the [FAQ on our website](https://aurisecreative.com/docs/controller-fields-for-contact-form-7/frequently-asked-questions/?utm_source=wordpress.org&utm_medium=link&utm_campaign=controller-fields-for-contact-form-7&utm_content=readme).
+Please check out the [FAQ on our website](https://aurisecreative.com/docs/TEXTDOMAIN_PLACEHOLDER/frequently-asked-questions/?utm_source=wordpress.org&utm_medium=link&utm_campaign=TEXTDOMAIN_PLACEHOLDER&utm_content=readme).
 
 == Upgrade Notice ==
 
-* 1.0.2 New plugin!
+= VERSION_PLACEHOLDER =
+Major updates to script function to allow for more flexibiity, including operations, multiple controllers, and numeric value checks. Tag generator updates coming soon! See [the changelog](https://plugins.trac.wordpress.org/browser/TEXTDOMAIN_PLACEHOLDER/trunk/changelog.txt) for more details.
 
 == Changelog ==
+
+= 1.1.1 =
+
+**Submission Date: April 16, 2024**
+
+* Fix: Addressed a bug introduced in version 1.1.0 that prevented frontend assets from loading.
+
+
+= 1.1.0 =
+
+**Submission Date: April 15, 2024**
+
+* Feature: Number fields can now be controllers. They display controlled fields based on number ranges set in the controlled element's values.
+* Feature: Controlled fields can now have multiple controllers. The `data-controller` value should be a pipe-delimited list of controller IDs. If it has multiple controllers, then there should be a `data-{controller ID}-values` attribute that sets the values for that specific controller. Controlled fields with multiple controllers are only hidden if all controllers evaluate to no matches. Otherwise, it will remain visible. Multiple controllers are treated as an OR comparison, meaning at least one controller must be active for the controlled field to display. Nest them to treat them as an AND operation.
+* Feature: Values can include operations such as `>`, `>=`, `<`, `<=`, `!=`, `*`, `BLANK`, `EMPTY_OR_ZERO`. The operation `=` is assumed when no comparison is found.
+* Fix: added `!important` to `au-cf7-controller` CSS to ensure it's hidden in case of conflicting styles.
 
 = 1.0.2 =
 
@@ -149,3 +174,7 @@ Please check out the [FAQ on our website](https://aurisecreative.com/docs/contro
 **Submission Date: March 30, 2023**
 
 * Major: first submission!
+
+= Full Changelog =
+
+Please see our [additional changelog.txt file](https://plugins.trac.wordpress.org/browser/TEXTDOMAIN_PLACEHOLDER/trunk/changelog.txt)

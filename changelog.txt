@@ -1,0 +1,34 @@
+== Changelog ==
+
+= 1.1.1 =
+
+**Submission Date: April 16, 2024**
+
+* Fix: Addressed a bug introduced in version 1.1.0 that prevented frontend assets from loading.
+
+= 1.1.0 =
+
+**Submission Date: April 15, 2024**
+
+* Feature: Number fields can now be controllers. They display controlled fields based on number ranges set in the controlled element's values.
+* Feature: Controlled fields can now have multiple controllers. The `data-controller` value should be a pipe-delimited list of controller IDs. If it has multiple controllers, then there should be a `data-{controller ID}-values` attribute that sets the values for that specific controller. Controlled fields with multiple controllers are only hidden if all controllers evaluate to no matches. Otherwise, it will remain visible. Multiple controllers are treated as an OR comparison, meaning at least one controller must be active for the controlled field to display. Nest them to treat them as an AND operation.
+* Feature: Values can include operations such as `>`, `>=`, `<`, `<=`, `!=`, `*`, `BLANK`, `EMPTY_OR_ZERO`. The operation `=` is assumed when no comparison is found.
+* Fix: added `!important` to `au-cf7-controller` CSS to ensure it's hidden in case of conflicting styles.
+
+= 1.0.2 =
+
+**Submission Date: May 5, 2023**
+
+* Fix: modifications from plugin review
+
+= 1.0.1 =
+
+**Submission Date: May 1, 2023**
+
+* Fix: modifications from plugin review
+
+= 1.0.0 =
+
+**Submission Date: March 30, 2023**
+
+* Major: first submission!

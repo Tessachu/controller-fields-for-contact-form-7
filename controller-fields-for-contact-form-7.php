@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: Controller Fields for Contact Form 7
+ * Plugin Name: PRODUCT_NAME
  * Description: This plugin extends Contact Form 7 by adding controller form fields and a framework to hide/display any form content based on user interaction. Requires Contact Form 7.
  * Version: VERSION_PLACEHOLDER
  * Author: AuRise Creative
@@ -252,7 +252,7 @@ function au_cf7_cf_enqueue_assets()
     $cf_handle = 'controller-fields-for-contact-form-7';
     // Only load our assets where CF7 assets are loaded
     if ((wp_script_is($cf7_handle, 'registered') || wp_script_is($cf7_handle, 'enqueued') || wp_script_is($cf7_handle, 'queue') || wp_script_is($cf7_handle, 'done') || wp_script_is($cf7_handle, 'to_do')) && !wp_script_is($cf_handle, 'queue')) {
-        $minify = defined('SCRIPT_DEBUG') && constant('SCRIPT_DEBUG') ? '' : 'min';
+        $minify = defined('SCRIPT_DEBUG') && constant('SCRIPT_DEBUG') ? '' : '.min';
         $url = plugin_dir_url(CF7_CONTROLLERFIELDS_FILE);
         $path = plugin_dir_path(CF7_CONTROLLERFIELDS_FILE);
 

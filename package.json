@@ -1,6 +1,7 @@
 {
     "name": "controller-fields-for-contact-form-7",
-    "version": "1.1.0",
+    "title": "Controller Fields for Contact Form 7",
+    "version": "1.1.1",
     "devDependencies": {
         "grunt": "^1.6.1",
         "grunt-contrib-clean": "^2.0.1",

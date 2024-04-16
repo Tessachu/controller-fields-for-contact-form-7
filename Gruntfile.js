@@ -120,10 +120,15 @@ module.exports = function(grunt) {
                     '_build/readme.txt',
                     '_build/<%= pkg.name %>.php',
                     '_build/includes/*.php',
-                    '_build/templates/*.php'
+                    '_build/templates/*.php',
+                    '_build_assets/_wp-assets/blueprints/blueprint.json',
+                    '_wp-assets/blueprints/blueprint.json'
                 ],
                 overwrite: true, // Overwrite matched source files
                 replacements: [{
+                    from: 'PRODUCT_NAME',
+                    to: "<%= pkg.title %>"
+                }, {
                     from: 'VERSION_PLACEHOLDER',
                     to: "<%= pkg.version %>"
                 }, {
@@ -190,6 +195,6 @@ module.exports = function(grunt) {
         grunt.file.write('./_wp-assets/blueprints/blueprint.json', grunt.file.read('./_wp-assets/blueprints/blueprint-template.json').toString());
     });
     grunt.registerTask('blueprint', ['clean:blueprint', 'create_blueprint', 'replace:blueprint_code']); // Register build task, usage: `grunt build`
-    grunt.registerTask('build', ['clean:build', 'cssmin', 'uglify:build', 'copy:build', 'copy:assets']); // Register build task, usage: `grunt build`
+    grunt.registerTask('build', ['clean:build', 'blueprint', 'cssmin', 'uglify:build', 'copy:build', 'copy:assets', 'replace:build']); // Register build task, usage: `grunt build`
     grunt.registerTask('deploy', ['wp_deploy:deploy']); // Register deploy task, usage `grunt wp_deploy`
 };
